@@ -1,0 +1,355 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Quicksand;
+  text-decoration: none;
+  color: #A5A2B8;
+  scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar {
+  border-radius: 10px;
+  height: 10px;
+  width: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+body {
+  background-color: #0D0D2B;
+  width: 90vw;
+  margin: auto;
+}
+
+.navbar-container {
+  z-index: 99;
+  position: fixed;
+  width: 90vw;
+  margin: auto;
+  background-color: #0D0D2B;
+}
+
+.navbar-container .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 3rem;
+}
+
+.navbar-container .navbar .logo {
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+.navbar-container .navbar .links {
+  list-style: none !important;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4rem;
+}
+
+.navbar-container .navbar .links .link a {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: cent er;
+      -ms-flex-align: cent er;
+          align-items: cent er;
+}
+
+.navbar-container .navbar .links .link a svg {
+  margin-right: 1rem;
+  fill: currentColor;
+}
+
+.coins-container {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding-top: 7rem;
+}
+
+.coins-container .top-coins {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.coins-container .top-coins .title {
+  padding-top: 8rem;
+}
+
+.coins-container .top-coins .title h1 {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+}
+
+.coins-container .top-coins #top {
+  width: 80%;
+  margin-top: 2rem;
+  margin: auto;
+  background-color: #352E5B;
+  border-radius: 10px;
+}
+
+.coins-container .top-coins #top hr {
+  opacity: 0.3;
+  margin: 0 1.5rem;
+}
+
+.coins-container .top-coins #top .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.coins-container .top-coins #top .head .num {
+  color: #fff !important;
+  width: 90px;
+  text-align: center;
+}
+
+.coins-container .top-coins #top .head .name {
+  width: 600px;
+}
+
+.coins-container .top-coins #top .head .last {
+  text-align: center;
+  width: 100px;
+}
+
+.coins-container .top-coins #top .head .change {
+  text-align: center;
+  width: 100px;
+}
+
+.coins-container .new-coins {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 3rem;
+}
+
+.coins-container .new-coins .title {
+  padding-top: 3rem;
+}
+
+.coins-container .new-coins .title h1 {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+}
+
+.coins-container .new-coins #new {
+  width: 80%;
+  margin-top: 2rem;
+  margin: auto;
+  background-color: #352E5B;
+  border-radius: 10px;
+}
+
+.coins-container .new-coins #new hr {
+  opacity: 0.3;
+  margin: 0 1.5rem;
+}
+
+.coins-container .new-coins #new .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.coins-container .new-coins #new .head .num {
+  color: #fff !important;
+  width: 90px;
+  text-align: center;
+}
+
+.coins-container .new-coins #new .head .name {
+  width: 600px;
+}
+
+.coins-container .new-coins #new .head .last {
+  text-align: center;
+  width: 100px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #84F3B7;
+}
+
+.coins-container .new-coins #new .head .more {
+  text-align: center;
+  width: 200px;
+}
+
+.coins-container .all-coins .title {
+  padding-top: 3rem;
+}
+
+.coins-container .all-coins .title h1 {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.coins-container .all-coins #all {
+  padding-right: 1rem;
+  width: 80%;
+  margin-top: 2rem;
+  margin: auto;
+  background-color: #352E5B;
+  border-radius: 10px;
+}
+
+.coins-container .all-coins #all hr {
+  opacity: 0.3;
+  margin: 0 1.5rem;
+}
+
+.coins-container .all-coins #all .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.coins-container .all-coins #all .head .num {
+  color: #fff !important;
+  width: 90px;
+  text-align: center;
+}
+
+.coins-container .all-coins #all .head .name {
+  width: 600px;
+}
+
+.coins-container .all-coins #all .head .last {
+  text-align: center;
+  width: 100px;
+}
+
+.coins-container .all-coins #all .head .more {
+  text-align: center;
+  width: 200px;
+}
+
+.name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.pannel {
+  background: #0D0D2B;
+  height: 500px;
+  width: 500px;
+  position: fixed;
+  top: 150px;
+  left: 400px;
+  z-index: 99;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.pannel .cross {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+
+.pannel .card {
+  height: 100%;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+}
+
+.pannel .card h3 b {
+  font-size: 2rem;
+}
+
+.pannel .card h3 span {
+  padding-left: 1rem;
+}
+
+.pannel .card p {
+  width: 80%;
+  text-align: center;
+}
+
+.pannel .card button {
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  color: #000;
+}
+
+.pannel-closed {
+  display: none;
+}
+
+.pannel-open {
+  display: block;
+}
+/*# sourceMappingURL=reports.css.map */

@@ -1,0 +1,233 @@
+@import '../index'
+
+.content-container
+  height: max-content
+  width: calc(100vw - 250px)
+  padding: 2rem
+  padding-top: 5rem
+  margin: auto
+  .content
+    display: flex
+    padding-top: 5rem
+    gap: 1rem
+    @media (max-width: 1100px)
+      display: block
+    .description-container
+      display: block
+      flex: 4
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      .description
+        padding: 2.8rem
+        h1
+          color: $purple
+          font-size: 3rem
+        p
+          margin-top: 1rem
+    .illustration-container
+      flex: 3
+      display: flex
+      justify-content: center
+      align-items: center
+      height: 100%
+
+      @media (max-width: 1100px)
+        display: block
+
+  .bar
+    position: fixed
+    top: 15rem
+  #bar2
+    padding-top: 5rem
+    padding-left: 20rem
+
+
+
+
+.diwah-container
+  height: max-content
+  width: calc(100vw - 250px)
+  padding: 2rem
+  margin: auto
+  .diwah
+    display: flex
+    padding-top: 2rem
+    gap: 1rem
+    @media (max-width: 1100px)
+      display: block
+    .description-container
+      display: block
+      flex: 4
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      padding-top: 3rem
+      padding-left: 3rem
+      .description
+        padding: 2.8rem
+        h1
+          color: $purple
+          font-size: 2rem
+        p
+          margin-top: 1.5rem
+    .illustration-container
+      flex: 3
+      display: flex
+      justify-content: center
+      align-items: center
+      height: 100%
+
+.check
+  .cards-container
+    padding-top: 10rem
+    height: max-content
+    width: 85%
+    margin: auto
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 2rem
+    @media (max-width: 1100px)
+      margin-left: 20%
+      display: block
+    .card
+      margin-top: 2rem
+      cursor: pointer
+      height: 450px
+      width: 400px
+      background: #2B076E44
+      transition: 2s linear ease-in
+      &:hover
+        background: #2B076E
+
+      border-radius: 10px
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      gap: 2rem
+      h3
+        b
+          font-size: 2rem
+        span
+          padding-left: 1rem
+          opacity: 0.7
+      p
+        width: 80%
+      button
+        width: 100px
+        height: 50px
+        border-radius: 10px
+        border: none
+        cursor: pointer
+.learn-container
+  margin-top: 6rem
+  .learn-title
+    font-size: 1.5rem
+    text-align: center
+    font-weight: 200
+    margin-top: 2rem
+    margin-bottom: 2rem
+  #learn
+    margin: auto
+    padding: 0 5rem
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    @media ( max-width: 1100px )
+      grid-template-columns: 1fr 1fr ;
+
+    gap: 1rem
+    #learn1
+      cursor: pointer
+      grid-column: 1 / 3
+      height: 300px
+      width: 100%
+
+      background: $green
+      border-radius: 10px
+      background: linear-gradient(to bottom, rgba(#260144, 0.8) 0%, rgba(#260144, 0.8) 100%) , url('https://images.unsplash.com/photo-1621504450181-5d356f61d307?ixid=MnwzMTU2NzR8MHwxfHNlYXJjaHwyfHxjcnlwdG98ZW58MHx8fHwxNjQ4ODQ0NTQy&ixlib=rb-1.2.1')
+      background-position: center
+      background-size: cover
+      padding: 1.5rem
+      .desc
+        margin-top: 12rem
+        h3
+          color: #fff
+          font-size: 1.5rem
+
+    .learn
+      border-radius: 10px
+      background-color: #1B1326
+      height: 300px
+      cursor: pointer
+      @media ( max-width: 1100px )
+        height: 400px;
+      .desc
+        padding: 1rem
+        h3
+          color : #fff
+
+  .more-articles
+    cursor: pointer
+    margin-left: 5rem
+    margin-top: 2rem
+    text-decoration: underline
+    color: $purple
+
+#learn2
+  @include image-setup('https://images.unsplash.com/photo-1631603090989-93f9ef6f9d80?ixid=MnwzMTU2NzR8MHwxfHNlYXJjaHw3fHxjcnlwdG98ZW58MHx8fHwxNjQ4ODQ0NTQy&ixlib=rb-1.2.1')
+#learn3
+  @include image-setup('https://images.unsplash.com/photo-1550565118-3a14e8d0386f?ixid=MnwzMTU2NzR8MHwxfHNlYXJjaHw1fHxiYW5rfGVufDB8fHx8MTY0ODg1MjQwOQ&ixlib=rb-1.2.1')
+#learn4
+  @include image-setup('https://images.unsplash.com/photo-1627123424574-724758594e93?ixid=MnwzMTU2NzR8MHwxfHNlYXJjaHwyfHx3YWxsZXR8ZW58MHx8fHwxNjQ4ODUyNjI0&ixlib=rb-1.2.1')
+#learn5
+  @include image-setup('https://images.unsplash.com/photo-1609554496796-c345a5335ceb?ixid=MnwzMTU2NzR8MHwxfHNlYXJjaHw5fHxjcnlwdG98ZW58MHx8fHwxNjQ4ODQ0NTQy&ixlib=rb-1.2.1')
+#learn6
+  @include image-setup('https://images.unsplash.com/photo-1624996379697-f01d168b1a52?ixid=MnwzMTU2NzR8MHwxfHNlYXJjaHw3fHxzdG9ja3xlbnwwfHx8fDE2NDg4NTM3NDU&ixlib=rb-1.2.1')
+#learn7
+  @include image-setup('https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixid=MnwzMTU2NzR8MHwxfHNlYXJjaHw1fHxtb25leXxlbnwwfHx8fDE2NDg4NTM4MzE&ixlib=rb-1.2.1')
+
+hr
+  margin-top: 7rem
+
+.footer
+  padding: 3rem
+  display: flex
+  justify-content: space-between
+  .contact
+    .idk
+      display: flex
+      list-style: none
+      gap: 2rem
+      padding: 1.7rem 0
+  .links
+    .logo
+      padding-bottom: 1rem
+    ul
+      list-style: none
+      &>*
+        padding: 5px 0
+
+
+.contact-container
+  margin-top: 6rem
+  .contact-title
+    font-size: 1.5rem
+    text-align: center
+    font-weight: 200
+    margin-top: 2rem
+    margin-bottom: 2rem
+
+.input-container
+  width: 80%
+  margin: auto
+  .input
+    width: 100%
+    height: 60px
+    border-radius: 10px
+    &::placeholder
+      font-size: 1.5rem
+      padding-left: 1rem

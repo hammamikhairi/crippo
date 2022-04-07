@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/index.css">
+  <link rel="stylesheet" href="../styles/reports/reports.css">
+  <script type="module" src="../scripts/services/top-coins.js"></script>
+  <link rel="icon" href="../images/bitcoin-sign-solid.svg" />
+  <title>Crippo</title>
+</head>
+<body>
+  <div class="navbar-container" id="navbar">
+    <div class="navbar">
+      <div class="logo-container">
+        <h2 class="logo" href="../../home.html">Crippo</h2>
+      </div>
+      <ul class="links">
+        <li class="link">
+          <span>
+            <a href="../../home.html">
+              <span>Home</span>
+            </a>
+          </span>
+        </li>
+        <li class="link">
+          <span>
+            <a href="#">
+              <span>Reports</span>
+            </a>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="pannel" class="pannel pannel-closed">
+    <div class="cross" onclick="switcher('pannel-open', 'pannel-closed')">
+      <span>X</span>
+    </div>
+    <div class="card">
+      <img width="70px" src="https://cdn.coinranking.com/bOabBYkcX/bitcoin_btc.svg" alt="">
+      <h3><b id="name">Bitcoin</b><span class="symbol">BTC</span></h3>
+      <p id="money">143367.193 Td</p>
+      <p id="change">+1.93</p>
+      <button> Learn more > </button>
+    </div>
+  </div>
+
+  <div class="coins-container">
+    <div class="top-coins">
+      <div id="top">
+        <div class="head">
+          <div class="num">No</div>
+          <div class="name">NAME</div>
+          <div class="last">LAST PRICE</div>
+          <div class="change">CHANGE</div>
+        </div>
+      </div>
+      <div class="title">
+        <h1>Market Update</h1>
+      </div>
+    </div>
+    <div class="new-coins">
+      <div id="new">
+        <div class="head">
+          <div class="num">No</div>
+          <div class="name">NAME</div>
+          <div class="more">Learn More</div>
+        </div>
+      </div>
+      <div class="title">
+        <h1>Newest Coins</h1>
+      </div>
+    </div>
+    <div class="all-coins">
+      <div class="title">
+        <h1>All Coins</h1>
+      </div>
+      <div id="all">
+        <div class="head">
+          <div class="num">No</div>
+          <div class="name">NAME</div>
+          <div class="last">LAST PRICE</div>
+          <div class="change">CHANGE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  let coins = []
+const fetchCoins = () => {
+	// fetch("http://localhost:3000/data")
+  fetch("https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0", {
+		"method": "GET",
+		"headers": {
+			"x-rapidapi-host": "coinranking1.p.rapidapi.com",
+			"x-rapidapi-key": "77e15e2766msh05722b4eeec1f67p1cfb0ejsn6ec5168282ec"
+		}
+	})
+	.then(response => response.json())
+  .then(data => data.data)
+	.then(data => {
+    // top coins
+    console.log(data)
+    coins = data.coins
+    console.log (coins)
+    let ranker = document.getElementById('top')
+    let sas = ""
+    for (let index = 0; index < 10; index++) {
+      const { rank, name, symbol, price, iconUrl, change } = data.coins[index];
+      change > 0? sas = `<span style="color: #0FAE96">+${change}</span>` : sas = `<span style="color: red">-${-change}</span>`
+      let amount = price * 3.1
+      ranker.innerHTML += `
+      <hr>
+      <div onclick="pannel(event)" data-symbol="${symbol}" style="cursor: pointer">
+      <div class="head" >
+      <div class="num">${rank}</div>
+      <div class="name">
+       <img src="${iconUrl}" alt="${symbol}" width="30px" />
+       <div>${symbol} | ${name}</div>
+      </div>
+      <div class="last">${amount.toFixed(3)} TD</div>
+      <div class="change">${sas}</div>
+      </div>
+      </div>
+      `
+    }
+
+    // nwest coins
+    let newer = document.getElementById('new')
+    let count = 0
+    data.stats.newestCoins.forEach(coin => {
+      const {name, symbol, iconUrl, coinrankingUrl} = coin
+      count ++
+      newer.innerHTML += `
+      <hr>
+      <div class="head" onclick="pannel(event)" style="cursor: pointer">
+      <div class="num">${count}</div>
+      <div class="name">
+       <img src="${iconUrl}" alt="${symbol}" width="30px" />
+       <div>${symbol} | ${name}</div>
+      </div>
+      <a target="blank" href=${coinrankingUrl}><div class="last">more</div></a>
+      <div class="change"></div>
+      </div>
+      `
+    })
+
+    // all coins
+    let all = document.getElementById('all')
+    data.coins.forEach( coin => {
+      const { rank, name, symbol, price, iconUrl, change } = coin;
+      change > 0? sas = `<span style="color: #0FAE96">+${change}</span>` : sas = `<span style="color: red">-${-change}</span>`
+      let amount = price * 3.1
+      all.innerHTML += `
+      <hr>
+      <div class="head" onclick="pannel(event)" style="cursor: pointer">
+      <div class="num">${rank}</div>
+      <div class="name">
+       <img src="${iconUrl}" alt="${symbol}" width="30px" />
+       <div>${symbol} | ${name}</div>
+      </div>
+      <div class="last">${amount.toFixed(3)} TD</div>
+      <div class="change">${sas}</div>
+      </div>
+      `
+    })
+
+	})
+	.catch(err => {
+		console.error(err);
+	});
+}
+
+fetchCoins()
+
+
+  const switcher = (dumb, put) =>  {
+    let list = document.getElementById("pannel").classList
+    list.remove(dumb)
+    list.add(put)
+  }
+  const pannel = (event) => {
+    let panel
+    if( event.target.dataset.symbol){
+      symbol =  event.target.dataset.symbol
+    }
+    else{
+      if( event.target.parentElement.dataset.symbol){
+        symbol = event.target.parentElement.dataset.symbol
+      }
+      else{
+       symbol = event.target.parentElement.parentElement.dataset.symbol
+      }
+    }
+
+    const [coin] = coins.filter(coin=>symbol==coin.symbol)
+    console.log(coin)
+    document.querySelector("#name").innerText=coin.name
+    document.querySelector("#change").innerText=coin.change
+    document.querySelector("#symbol").innerText=coin.symbol
+    switcher('pannel-closed', 'pannel-open')
+  }
+</script>
+</html>

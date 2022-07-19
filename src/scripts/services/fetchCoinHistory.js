@@ -2,7 +2,7 @@ fetch("https://coinranking1.p.rapidapi.com/coin/Qwsogvtv82FCd/history?referenceC
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "coinranking1.p.rapidapi.com",
-		"x-rapidapi-key": "77e15e2766msh05722b4eeec1f67p1cfb0ejsn6ec5168282ec"
+		"x-rapidapi-key": "API_KEY"
 	}
 }).then(res => res.json())
 .then(data => 	console.log(data) )
